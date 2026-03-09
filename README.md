@@ -2,6 +2,8 @@
 
 Adds edible mud. Only for BTA! babric.
 
+Edible mud is consumed in one bite and heals only a single health point.
+
 ## Recipe
 
 You can create edible mud by cooking baked mud, naturally.
