@@ -1,0 +1,49 @@
+{
+	"schemaVersion": 1,
+	"id": "ediblemud",
+	"version": "${version}",
+	"name": "Edible Mud",
+	"description": "Adds mud which you can eat.",
+	"authors": [
+		"camoweed_"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"icon": "icon.png",
+	"license": "CC0-1.0",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"camoweed.ediblemud.EdibleMud"
+		],
+		"beforeGameStart": [
+			"camoweed.ediblemud.EdibleMud"
+		],
+		"afterGameStart": [
+			"camoweed.ediblemud.EdibleMud"
+		],
+		"recipesReady": [
+			"camoweed.ediblemud.Recipes"
+		],
+		"initModels": [
+			"camoweed.ediblemud.Models"
+		],
+		"onInitialize": [
+			"camoweed.ediblemud.EdibleMud"
+		]
+	},
+	"mixins": [
+		"ediblemud.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=${fabricloader}",
+		"halplibe": ">=${halplibe}",
+		"minecraft": "*",
+		"java": ">=${java}"
+	},
+	"suggests": {
+		"modmenu": ">=${modmenu}"
+	}
+}
