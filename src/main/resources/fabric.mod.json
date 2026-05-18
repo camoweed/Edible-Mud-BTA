@@ -28,7 +28,7 @@
 			"camoweed.ediblemud.Recipes"
 		],
 		"initModels": [
-			"camoweed.ediblemud.Models"
+          "camoweed.ediblemud.Models"
 		],
 		"onInitialize": [
 			"camoweed.ediblemud.EdibleMud"

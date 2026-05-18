@@ -1,39 +1,29 @@
 package camoweed.ediblemud;
 
-import net.minecraft.client.render.EntityRenderDispatcher;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
+import net.minecraft.client.render.EntityRendererDispatcher;
 import net.minecraft.client.render.TileEntityRenderDispatcher;
 import net.minecraft.client.render.block.color.BlockColorDispatcher;
-import net.minecraft.client.render.block.model.BlockModelCake;
-import net.minecraft.client.render.block.model.BlockModelDispatcher;
-import net.minecraft.client.render.block.model.BlockModelStandard;
+import net.minecraft.client.render.block.model.*;
+import net.minecraft.client.render.block.model.generic.BlockModelGeneric;
+import net.minecraft.client.render.block.model.generic.BlockModelGenericCake;
 import net.minecraft.client.render.item.model.ItemModelDispatcher;
-import net.minecraft.core.util.helper.Side;
-import turniplabs.halplibe.helper.ModelHelper;
 import turniplabs.halplibe.util.ModelEntrypoint;
 
-import static camoweed.ediblemud.Blocks.edibleMud;
-
+@Environment(EnvType.CLIENT)
 public class Models implements ModelEntrypoint {
 
 	@Override
 	public void initBlockModels(BlockModelDispatcher dispatcher) {
-		ModelHelper.setBlockModel(edibleMud, () ->
-			new BlockModelCake<>(edibleMud)
-				.setTex(0,"minecraft:block/mud",Side.sides)
-//				.setTex(1,"ediblemud:block/less_mud",Side.sides)
-//				.setTex(2,"minecraft:block/mud",Side.sides)
-//				.setTex(3,"minecraft:block/mud",Side.sides)
-		);
-
-
+		dispatcher.addDispatch(Blocks.edibleMud, new BlockModelGenericMudCake<>(Blocks.edibleMud));
 	}
-
 
 	@Override
 	public void initItemModels(ItemModelDispatcher dispatcher) {}
 
 	@Override
-	public void initEntityModels(EntityRenderDispatcher dispatcher) {}
+	public void initEntityModels(EntityRendererDispatcher dispatcher) {}
 
 	@Override
 	public void initTileEntityModels(TileEntityRenderDispatcher dispatcher) {}
